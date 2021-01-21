@@ -18,7 +18,7 @@ function Title(props) {
             <br />
             { user && 
                 <span>
-                    Welcome to the world baby {user.firstname} {user.lastname}, born on {user.birthday.toDateString()}
+                    Welcome to the world baby {user.firstname} {user.lastname}
                 </span>
             }
         </p>;
@@ -28,16 +28,18 @@ function Title(props) {
             <br />
             { user && 
                 <span>
-                    Wilkomen {user.firstname} {user.lastname}, something_here {user.birthday.toDateString()}
+                    Wilkomen {user.firstname} {user.lastname}, something_here {user.birthday}
                 </span>
             }
         </p>;
     }
+
+    return null;
 }
 
 function mapStateToProps(state) {
     return {
-        applicationState: state
+        applicationState: state.appReducer
     }
 }
 

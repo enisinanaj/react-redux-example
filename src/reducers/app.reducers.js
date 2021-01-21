@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import { CHANGE_LANGUAGE, STORE_USER_DATA } from '../actions/app.actions';
 
 const initialState = {
@@ -21,11 +22,9 @@ function appReducer(state = initialState, action) {
                 user: action.user,
                 loggedIn: !!action.user
             };
+        default:
+            return state;
     } 
-
-    return {
-        ...initialState
-    };
 }
 
-export default appReducer;
+export default combineReducers({appReducer});

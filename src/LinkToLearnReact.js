@@ -7,11 +7,6 @@ function LinkToLearnReact(props) {
 
     useEffect(() => {
         console.warn("language is: " + props.applicationState.ln);
-        props.actions.changeLanguage("de-AT");
-    }, []);
-
-    useEffect(() => {
-        console.warn("language is: " + props.applicationState.ln);
     }, [props.applicationState.ln])
 
     if (props.applicationState.ln === "de-AT") {
@@ -33,7 +28,7 @@ function LinkToLearnReact(props) {
 
 function mapStateToProps(state) {
     return {
-        applicationState: state
+        applicationState: state.appReducer
     };
 }
 
